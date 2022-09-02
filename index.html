@@ -1,0 +1,59 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+
+    <div class="contendor">
+        <div class="contendor-izquierdo">
+            <div class="contendor-encabezado">
+                <div class="encabezad-logo_titulo">
+                    <img src="img/logo.png" alt="">
+                    <h1>Encriptador de texto</h1>
+                </div>
+            </div>
+            <div class="contendor-cuerpo">
+                <div class="contendor-encriptadortexto">
+                    <div class="contenedorarea-central">
+                        <textarea id="casilla_texto" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+                    </div>
+                    <div class="contendorarea-inferior">
+                        <div class="contendorbtnlogo">
+                            <img src="img/simbolo.png" alt="">
+                            <p>Solo letras minúsculas y sin acentos</p>
+                        </div>
+                        <div class="contendorbotones">
+                                <button type="button" id="btnencriptar" onclick="Encriptar()">Encriptar</button>
+                                <button type="button" id="btndesencriptar" onclick="Desencriptar()">Desencriptar </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contendor-derecho">
+            <div class="contenedor-e_central">
+                <div class="contendor-info" id="contendor-info1">
+                    <img src="img/Muñeco.png" alt="imagen de una persona" id="munheco">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>Ingrese el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div class="contendor-info" id="contendor-info2">
+                    <textarea id="texto_encriptado" cols="30" rows="10" disabled></textarea>
+                    <button type="button" id="btncopiar" onclick="copiarTexto()">Copiar</button>
+                </div>
+            </div>
+        </div>
+        <footer class="piepagina"></footer>
+    </div>
+</body>
+</html>
