@@ -347,6 +347,7 @@ footer{
     #btnencriptar{
         width: 100%;
         height: 50px;
+        margin-bottom: 3px;
     }
 
     #btndesencriptar{
@@ -355,11 +356,28 @@ footer{
         margin: 0 auto;
     }
 
+    #btncopiar{
+        height: 50px;
+    }
+
     .container_mensaje-info h2{
         font-size: 15px;
     }
     
     .container_mensaje-info p{
         font-size: 10px;
+    }
+
+    .container_cuerpo-area textarea{
+        font-size: 20px;
+    }
+
+    .container_mensaje-info textarea{
+        font-size: 20px;
+        height: 70%;
+    }
+
+    footer{
+        height: 15%;
     }
 }
