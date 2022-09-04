@@ -8,40 +8,42 @@ body{
     background-color: #3b3f538a;
 }
 
-.contendor{
+.container{
     max-width: 1440px;
     max-height: 1024px;
+    min-width: 1000px;
+    min-height: 600px;
     position: relative;
     margin: 0 auto;
 }
 
-.contendor-izquierdo{
+.container_body1{
     width: 60%;
     height: 92%;
     background-color: #F3F5FC;
-    display: inline-block;
+    float: left;
 }
 
 /* CSS para el diseño del encabezado */
-.contendor-encabezado{
+.container_encabezado{
     width: 100%;
-    height: 10%;
+    height: 80px;
     background-color: #F3F5FC;
-    display: inline-block;
 }
 
-.encabezad-logo_titulo{
+.container_logo{
     width: 50%;
-    margin: 10px;
-    position: relative;
+    position: absolute;
+    left: 20px;
+    right: 10px;
+    top: 10px;
 }
 
-.encabezad-logo_titulo img{
+.container_logo img{
     display: inline-block;
-    margin: 0 10px 0 20px;
 }
 
-.encabezad-logo_titulo h1{
+.container_logo h1{
     display: inline-block;
     font-size: 20px;
     position: absolute;
@@ -49,25 +51,20 @@ body{
 }
 
 /* CSS para el diseño del textArea y los botones */
-.contendor-cuerpo{
+.container_cuerpo{
     width: 100%;
-    height: 82%;
+    height: calc(100% - 80px);
     background-color: #F3F5FC;
     display: inline-block;
 }
 
-.contendor-encriptadortexto{
+.container_cuerpo-area{
     width: 100%;
     height: 100%;
     background-color: #F3F5FC;
 }
 
-.contenedorarea-central{
-    height: 70%;
-    padding-top: 5%;
-}
-
-.contenedorarea-central textarea{
+.container_cuerpo-area textarea{
     display: block;
     width: 60%;
     height: 60%;
@@ -87,28 +84,44 @@ body{
     color: #0A3871;
 }
 
-.contendorarea-inferior{
+.container_area-inferior{
     display: block;
     position: relative;
     width: 80%;
-    height: 24%;
+    height: 40%;
     font-size: 15px;
-    margin: 20px auto 20px auto;
+    margin: 0px auto;
 }
 
-.contendorbtnlogo{
+.container_inferior-logomensaje{
     width: 550px;
-    margin: 49px auto 5px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+
+   
+    height: 18px;
+    left: calc((100% - 490px)/2);
+    top: calc((100% - 52%));
 }
 
-.contendorbtnlogo p{
+.container_inferior-logomensaje p{
     display: inline-block;
 }
 
-.contendorbotones{
-    display: block;
+.container_inferior-botones{
     width: 550px;
-    margin: 10px auto 0px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    position: absolute;
+    left: calc((100% - 490px)/2);
+    top: calc((100% - 42%));
 }
 
 button{
@@ -148,26 +161,26 @@ button{
 }
 
 /*CSS para el diseño del textArea del texto encriptado */
-.contendor-derecho{
+.container_body2{
     width: 40%;
 	height: 92%;
 	background-color: #F3F5FC;
-    position: absolute;
-	left: 60%;
-    display: inline-block;
+    position: relative;
+    float: left;
 }
 
-.contenedor-e_central{
+.container_mensaje{
     background: white;
     width: 400px;
     height: 94%;
-    margin: 0px auto 20px auto;
+    margin: 0 auto;
+    top: calc((100% - 94%)/2);
     border-radius: 32px;
     position: relative;
     box-shadow: 2px 2px 2px 2px rgb(87, 82, 82);
 }
 
-.contendor-info{
+.container_mensaje-info{
     background: white;
     position: absolute;
     width: 85%;
@@ -178,32 +191,41 @@ button{
     font-weight: bold;
 }
 
-.contendor-info img{
-    margin-top: 20%;
+.container_mensaje-info img{
+    position: absolute;
+    left: 2%;
+    top: calc((100% - 396px)/2);
 }
 
-.contendor-info h2{
+.container_mensaje-info h2{
     font-size: 25px;
     line-height: 120%;
     color: #343A40;
-    margin: 10px 0;
+    position: absolute;
+    top: calc((100% - 396px)/2 + 300px);
 }
 
-.contendor-info textarea{
+.container_mensaje-info p{
+    position: absolute;
+    top: calc((100% - 396px)/2 + 365px);
+}
+
+.container_mensaje-info textarea{
     width: 100%;
     height: 80%;
     font-size: 30px;
-    margin-bottom: 62px;
     border: none;
     resize: none;
     background: white;
     color: #0A3871;
 }
 
-#btncopiar{  
+#btncopiar{
+    position: absolute;
     background: #D8DFE8;
     color: #0A3871;
-    margin: 0 auto;
+    left: calc((100% - 228px)/2);
+    top: calc((100% - 8.2%));
 }
 
 #btncopiar:hover{
@@ -214,97 +236,121 @@ button{
 
 /* CSS para el diseño del pie de pagina */
 footer{
+    float: left;
+    display: flex;
+    align-items: center;
+    align-content: center;
     width: 100%;
     height: 8%;
+    text-align: center;
     background-color: rgba(33, 31, 36, 0.815);
 }
 
-@media screen and (max-width: 912px){
+.footer_logo{
+    max-width: 13px;
+    min-height: 13px;
+}
 
-    .contendor-izquierdo{
-        display: block;
+.piepagina{
+    margin: 0 auto;
+}
+
+.copyright{
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 18px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 999px){
+
+    .container{
+        min-width: 320px;
+        min-height: 480px;
+    }
+
+    .container_body1{
         width: 100%;
-        height: 70%;
+        height: 55%;
+        float: none;
     }
 
-    .encabezad-logo_titulo h1{
-        font-size: 30px;
-    }
-    
-    .contendorarea-inferior{
-        height: 20%;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .contendor-derecho{
-        display: block;
-        position: relative;
-        left: 0;
+    .container_body2{
+        height: 35%;
         width: 100%;
-        height: 25%;
+        float: none;
     }
 
-    .contenedor-e_central{
-        position: relative;
-        display: block;
-        width: 90%;
-        height: 133px;
-        
+    .container_mensaje{
+        width: 70%;
     }
 
-    .contendor-info textarea{
-        margin-bottom: 0;
-        height: 70%;
-    }
-    
-    .contendor-info button{
-       display: block;
-       margin-top: 20px;
-    }
-    .piepagina{
-        height: 5%;
-    }
-
-    #munheco{
+    .container_mensaje-info img{
         display: none;
+    }
+
+    .container_mensaje-info h2{
+        position: absolute;
+        top: calc((100% - 46px)/2);
+    }
+    
+    .container_mensaje-info p{
+        position: absolute;
+        top: calc((100% - 46px)/2 + 30px);
+    }
+
+    #btncopiar{
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+
+    footer{
+        height: 20%;
     }
 }
 
-@media screen and (max-width: 611px){
-
-    .contendor{
-        height: auto;
-    }
-
-    .contendorbtnlogo{
-        margin: 0;
-    }
-
-    .contendorbotones{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 24px;
-        
-        position: absolute;
-        width: 343px;
-        height: 158px;
-        left: 16px;
-        top: 14px;
+@media screen and (max-width: 600px){
+    .container_logo{
+        width: 60%;
         
     }
 
-    .encabezad-logo_titulo{
-        margin: 10px auto;
+    .container_inferior-logomensaje{
+        width: auto;
+        width: auto;
+        display: block;
+        align-items: center;
+        gap: 0px;
+        position: relative;
+        left: 0px;
+        top: 2%;
     }
 
-    .encabezad-logo_titulo h1{
-        font-size: 20px;
+    .container_inferior-botones{
+        width: auto;
+        display: block;
+        align-items: center;
+        gap: 0px;
+        position: relative;
+        left: 0px;
+        top: 6%;
     }
 
-    .contenedorarea-central textarea{
-        font-size: 20px;
+    #btnencriptar{
+        width: 100%;
+    }
+
+    #btndesencriptar{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container_mensaje-info h2{
+        font-size: 15px;
+    }
+    
+    .container_mensaje-info p{
+        font-size: 10px;
     }
 }

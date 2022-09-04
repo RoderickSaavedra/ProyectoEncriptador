@@ -14,25 +14,23 @@
 </head>
 <body>
 
-    <div class="contendor">
-        <div class="contendor-izquierdo">
-            <div class="contendor-encabezado">
-                <div class="encabezad-logo_titulo">
-                    <img src="img/logo.png" alt="">
+    <div class="container">
+        <div class="container_body1">
+            <div class="container_encabezado">
+                <div class="container_logo">
+                    <img src="img/logo.png" alt="logo de alura">
                     <h1>Encriptador de texto</h1>
                 </div>
             </div>
-            <div class="contendor-cuerpo">
-                <div class="contendor-encriptadortexto">
-                    <div class="contenedorarea-central">
-                        <textarea id="casilla_texto" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
-                    </div>
-                    <div class="contendorarea-inferior">
-                        <div class="contendorbtnlogo">
+            <div class="container_cuerpo">
+                <div class="container_cuerpo-area">
+                    <textarea id="casilla_texto" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+                    <div class="container_area-inferior">
+                        <div class="container_inferior-logomensaje">
                             <img src="img/simbolo.png" alt="">
                             <p>Solo letras minúsculas y sin acentos</p>
                         </div>
-                        <div class="contendorbotones">
+                        <div class="container_inferior-botones">
                                 <button type="button" id="btnencriptar" onclick="Encriptar()">Encriptar</button>
                                 <button type="button" id="btndesencriptar" onclick="Desencriptar()">Desencriptar </button>
                         </div>
@@ -40,20 +38,25 @@
                 </div>
             </div>
         </div>
-        <div class="contendor-derecho">
-            <div class="contenedor-e_central">
-                <div class="contendor-info" id="contendor-info1">
+        <div class="container_body2">
+            <div class="container_mensaje">
+                <div class="container_mensaje-info" id="contendor-info1">
                     <img src="img/Muñeco.png" alt="imagen de una persona" id="munheco">
                     <h2>Ningún mensaje fue encontrado</h2>
                     <p>Ingrese el texto que desees encriptar o desencriptar.</p>
                 </div>
-                <div class="contendor-info" id="contendor-info2">
+                <div class="container_mensaje-info" id="contendor-info2">
                     <textarea id="texto_encriptado" cols="30" rows="10" disabled></textarea>
                     <button type="button" id="btncopiar" onclick="copiarTexto()">Copiar</button>
                 </div>
             </div>
         </div>
-        <footer class="piepagina"></footer>
+        <footer>
+            <div class="piepagina">
+                <p class="copyright">RoderickSaavedra <img src="img/GitHub-Mark-Light-32px.png" alt="logo_github" class="footer_logo"></p>
+                <p class="copyright">&copy Copyright Encriptador - 2022</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
