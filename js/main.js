@@ -117,8 +117,65 @@ function alternarContenedores(texto){
     }
 }
 
-function copiarTexto(){
+function copiarPegarTexto(){
     var texto = areaEncrip.value;
     areaEncrip.value = "";
     colocarTexto(texto, areaTextos);
+}
+
+function copiarTextoPortaPapeles(){
+    var texto = areaEncrip.value;
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+        alert("Texto copiado!");
+        areaTextos.value = "";
+    })
+        .catch(err => {
+        alert("Que raro!? ocurrio un error...");
+    })
+}
+
+function DesencriptarV2(){
+    var texto = areaTextos.value;
+    var resultado = "";
+
+    sinTexto(texto);
+    if(verficarTexto(texto)){
+        colocarTexto(resultado = "", areaEncrip);
+        return
+    }
+
+    var itr;
+
+    for(itr=0; itr < texto.length; itr++){
+        if(texto[itr] != " "){
+
+            if(vocal.indexOf(texto[itr]) !== -1){
+                for(var i=0; i < vocales.length; i++){
+                    if(vocales[i] == texto[itr]){
+                        resultado +=  texto[itr];
+                        itr += buscarPatronEncriptado(texto, itr, i);
+                    }
+                }
+            }else{
+                resultado +=  texto[itr];
+            }
+
+        }else{
+            resultado +=  texto[itr];
+        }
+        
+    }
+    console.log(resultado);
+    colocarTexto(resultado, areaEncrip);
+}
+
+
+function buscarPatronEncriptado(texto, itr, i){
+    for(var x=1; x < encriptacion[i].length; x++){
+        if(texto[itr + x] !== encriptacion[i].charAt(x)){
+            return 0;
+        }
+    }
+    return encriptacion[i].length - 1;
 }
